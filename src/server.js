@@ -9,10 +9,17 @@ const app = express()
 app.use(express.json())
 
 app.get("/", (req, res) => {
+    return res.status(404).send({
+        message: "Hello World"
+    })
+})
+
+app.get("/2tds2", (req, res) => {
     return res.status(200).send({
         message: "Hello World"
     })
 })
+
 app.listen(serverPort, () => {
     console.log(`😎 Server started on http://localhost:${serverPort}`)
 })
